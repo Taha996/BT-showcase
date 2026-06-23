@@ -929,6 +929,303 @@
         transition-duration: .01ms !important;
       }
     }
+
+    [data-modal] {
+      cursor: pointer;
+    }
+
+    .news-body h3 .read-more,
+    .activity-body .read-more,
+    .feature-content .read-more {
+      display: inline-block;
+    }
+
+    .read-cue {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .news-body .read-cue {
+      margin-top: 10px;
+    }
+
+    .news-more {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .news-more button {
+      min-height: 46px;
+      padding: 0 26px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--blue);
+      font-weight: 800;
+      cursor: pointer;
+      transition: background .25s ease, border-color .25s ease;
+    }
+
+    .news-more button:hover {
+      background: var(--cyan);
+      border-color: var(--yellow);
+    }
+
+    .news-extra {
+      display: none;
+      margin-top: 14px;
+      gap: 14px;
+    }
+
+    .news-extra.open {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(10, 13, 20, .62);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      position: relative;
+      width: 100%;
+      max-width: 660px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transform: translateY(20px) scale(.98);
+      transition: transform .35s ease;
+    }
+
+    .modal-overlay.open .modal {
+      transform: none;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 3;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(255, 255, 255, .92);
+      color: var(--blue-ink);
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(11, 18, 32, .18);
+    }
+
+    .modal-close:hover {
+      background: var(--yellow);
+    }
+
+    .modal-image {
+      flex: 0 0 auto;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--cyan);
+    }
+
+    .modal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-scroll {
+      padding: 28px 30px 32px;
+      overflow-y: auto;
+    }
+
+    .modal-scroll .tag {
+      margin-bottom: 14px;
+    }
+
+    .modal-scroll h3 {
+      margin: 0 0 14px;
+      color: var(--blue-ink);
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.12;
+    }
+
+    .modal-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .modal-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .modal-body p {
+      margin: 0 0 14px;
+      color: #344056;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .modal-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .modal-contact {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 12px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .modal-contact a {
+      color: var(--blue);
+    }
+
+    .modal-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-section {
+      background:
+        linear-gradient(90deg, rgba(37, 99, 235, .07), transparent 45%),
+        var(--soft);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      min-height: 178px;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--cyan);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .contact-card h3 {
+      margin: 0 0 8px;
+      color: var(--blue-ink);
+      font-size: 18px;
+    }
+
+    .contact-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .contact-card a {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button-outline {
+      min-height: 46px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--blue);
+      font-weight: 800;
+      transition: background .25s ease, border-color .25s ease;
+    }
+
+    .button-outline:hover {
+      background: var(--cyan);
+      border-color: var(--yellow);
+    }
+
+    @media (max-width: 1060px) {
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .news-extra.open {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -986,7 +1283,7 @@
             <a class="button-secondary" href="#actualites">Dernières actualités</a>
           </div>
         </div>
-        <article class="hero-panel hero-item" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+        <article class="hero-panel hero-item" data-modal="prix-national" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
           <div class="panel-image">
             <img src="images/news-2.jpg" alt="Prix National du Micro-Entrepreneurs">
           </div>
@@ -1052,7 +1349,7 @@
           <p>Les titres et images viennent de la page d’origine, réorganisés pour une lecture plus rapide et plus éditoriale.</p>
         </div>
         <div class="news-layout">
-          <article class="feature-card reveal" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+          <article class="feature-card reveal" data-modal="marche-hiver" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
             <img src="images/news-3.jpg" alt="Marché Solidaire d’Hiver à Casablanca">
             <div class="feature-content">
               <span class="tag">Événement</span>
@@ -1061,39 +1358,84 @@
             </div>
           </article>
           <div class="news-list">
-            <article class="news-card" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+            <article class="news-card" data-modal="foire-ramadan" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
               <img src="images/news-1.jpg" alt="Foire Solidaire Ramadan à Mohammédia">
               <div class="news-body">
                 <time>Solidarité</time>
                 <h3>Foire Solidaire Ramadan à Mohammédia</h3>
                 <p>Un temps fort autour de l’entrepreneuriat, des femmes et des initiatives locales.</p>
+                <span class="read-cue">Lire la suite →</span>
               </div>
             </article>
-            <article class="news-card" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+            <article class="news-card" data-modal="bazar-casa" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
               <img src="images/news-5.jpg" alt="Bazar Solidaire de Casablanca">
               <div class="news-body">
                 <time>Commercialisation</time>
                 <h3>5ème édition du Bazar Solidaire de Casablanca</h3>
                 <p>Un format événementiel pour connecter les exposants, visiteurs et partenaires.</p>
+                <span class="read-cue">Lire la suite →</span>
               </div>
             </article>
-            <article class="news-card" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+            <article class="news-card" data-modal="bazar-mdiq" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
               <img src="images/news-6.jpg" alt="Bazar Solidaire de Mdiq">
               <div class="news-body">
                 <time>Régions</time>
                 <h3>5ème édition du Bazar Solidaire de Mdiq</h3>
                 <p>La dynamique solidaire se déploie à l’échelle territoriale.</p>
+                <span class="read-cue">Lire la suite →</span>
               </div>
             </article>
-            <article class="news-card" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+            <article class="news-card" data-modal="prix-national" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
               <img src="images/news-7.jpg" alt="Prix National du Micro-Entrepreneurs">
               <div class="news-body">
                 <time>Prix national</time>
                 <h3>Micro-Entrepreneurs - 11ème édition</h3>
                 <p>Une vitrine pour les parcours entrepreneuriaux accompagnés par l’écosystème.</p>
+                <span class="read-cue">Lire la suite →</span>
               </div>
             </article>
           </div>
+        </div>
+        <div class="news-extra" id="newsExtra">
+          <article class="news-card" data-modal="women-business">
+            <img src="images/news-8.jpg" alt="Participation du CMS au Women in Business">
+            <div class="news-body">
+              <time>16 octobre 2025</time>
+              <h3>Participation du CMS au « Women in Business »</h3>
+              <p>Le CMS participe à un événement dédié à l’entrepreneuriat féminin.</p>
+              <span class="read-cue">Lire la suite →</span>
+            </div>
+          </article>
+          <article class="news-card" data-modal="convention">
+            <img src="images/news-4.jpg" alt="Signature d’une Convention de Partenariat">
+            <div class="news-body">
+              <time>8 octobre 2025</time>
+              <h3>Signature d’une Convention de Partenariat</h3>
+              <p>Un partenariat entre le SECAESS et le CMS, signé à Salé.</p>
+              <span class="read-cue">Lire la suite →</span>
+            </div>
+          </article>
+          <article class="news-card" data-modal="senamif">
+            <img src="images/news-2.jpg" alt="Semaine Nationale de la Microfinance">
+            <div class="news-body">
+              <time>26 septembre 2025</time>
+              <h3>Semaine Nationale de la Microfinance (SeNaMif)</h3>
+              <p>Le CMS prend part à la 1ère édition, organisée au Bénin.</p>
+              <span class="read-cue">Lire la suite →</span>
+            </div>
+          </article>
+          <article class="news-card" data-modal="salon-artistes">
+            <img src="images/news-3.jpg" alt="Salon Solidaire des Artistes">
+            <div class="news-body">
+              <time>25 juin 2025</time>
+              <h3>Salon Solidaire des Artistes</h3>
+              <p>Ouverture à la Galerie d’art de la Fondation CDG, à Rabat.</p>
+              <span class="read-cue">Lire la suite →</span>
+            </div>
+          </article>
+        </div>
+        <div class="news-more">
+          <button type="button" id="newsToggle" aria-expanded="false" aria-controls="newsExtra">Voir toutes les actualités</button>
         </div>
       </div>
     </section>
@@ -1108,7 +1450,7 @@
           <p>Les blocs historiques du site sont conservés, mais traités comme des parcours d’action clairs pour les AMC et les micro-entrepreneurs.</p>
         </div>
         <div class="activity-grid">
-          <article class="activity-card" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+          <article class="activity-card" data-modal="formation" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
             <div class="activity-image"><img src="images/formation.png" alt="Formation"></div>
             <div class="activity-body">
               <span class="activity-num">01</span>
@@ -1117,7 +1459,7 @@
               <a class="text-link" href="#">Découvrir</a>
             </div>
           </article>
-          <article class="activity-card" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+          <article class="activity-card" data-modal="appui" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
             <div class="activity-image"><img src="images/appui.png" alt="Appui à la micro-entreprise"></div>
             <div class="activity-body">
               <span class="activity-num">02</span>
@@ -1126,7 +1468,7 @@
               <a class="text-link" href="#">Découvrir</a>
             </div>
           </article>
-          <article class="activity-card" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+          <article class="activity-card" data-modal="observatoire" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
             <div class="activity-image"><img src="images/observatoire.jpg" alt="Observatoire"></div>
             <div class="activity-body">
               <span class="activity-num">03</span>
@@ -1149,28 +1491,28 @@
           <p>Agenda, éducation financière, e-learning, cartographie, bibliothèque et publications gagnent en hiérarchie et en lisibilité.</p>
         </div>
         <div class="tools-grid">
-          <article class="tool-card">
+          <article class="tool-card" data-modal="cartographie">
             <div class="tool-icon">↗</div>
             <div>
               <h3>Cartographie nationale</h3>
               <p>Localiser les implantations de la microfinance au Maroc grâce à un outil interactif.</p>
             </div>
           </article>
-          <article class="tool-card">
+          <article class="tool-card" data-modal="education">
             <div class="tool-icon">✓</div>
             <div>
               <h3>Éducation financière</h3>
               <p>Des contenus pédagogiques pour rendre les bonnes pratiques plus accessibles.</p>
             </div>
           </article>
-          <article class="tool-card">
+          <article class="tool-card" data-modal="elearning">
             <div class="tool-icon">▶</div>
             <div>
               <h3>e-Learning</h3>
               <p>Formation à distance et ressources d’accompagnement pour les acteurs du secteur.</p>
             </div>
           </article>
-          <article class="tool-card">
+          <article class="tool-card" data-modal="bibliotheque">
             <div class="tool-icon">≡</div>
             <div>
               <h3>Bibliothèque</h3>
@@ -1247,6 +1589,19 @@
     </div>
   </footer>
 
+  <div class="modal-overlay" id="modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
+      <div class="modal-image" id="modalImage"><img src="" alt=""></div>
+      <div class="modal-scroll">
+        <span class="tag" id="modalTag"></span>
+        <h3 id="modalTitle"></h3>
+        <div class="modal-meta" id="modalMeta"></div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script>
@@ -1313,6 +1668,244 @@
       document.querySelectorAll(".reveal, .shortcut, .news-card, .activity-card, .tool-card, .stat").forEach((el) => {
         el.style.opacity = 1;
         el.style.transform = "none";
+      });
+    }
+
+    /* ---------------------------------------------------------------
+       Contenu détaillé (titres, dates, lieux et résumés repris du
+       site officiel cm6-microfinance.ma) affiché dans une fenêtre
+       au clic sur une actualité, une activité ou un outil.
+    --------------------------------------------------------------- */
+    const MODAL_DATA = {
+      "marche-hiver": {
+        tag: "Événement",
+        title: "Lancement du Marché Solidaire d’Hiver à Casablanca",
+        image: "images/news-3.jpg",
+        meta: ["📅 12 décembre 2025", "📍 Casablanca"],
+        body: [
+          "Le CMS, en partenariat avec Casa Anfa, donne rendez-vous du 12 décembre 2025 au 25 janvier 2026 pour le Marché Solidaire d’Hiver.",
+          "L’événement met en avant les produits, les savoir-faire et les opportunités commerciales des micro-entrepreneurs accompagnés par le Centre."
+        ]
+      },
+      "foire-ramadan": {
+        tag: "Solidarité",
+        title: "Foire Solidaire Ramadan à Mohammédia",
+        image: "images/news-1.jpg",
+        meta: ["📅 9 mars 2026", "📍 Mohammédia"],
+        body: [
+          "À l’occasion de la Journée internationale des droits des femmes, le Centre Mohammed VI de Soutien à la Microfinance Solidaire organise une foire solidaire à Mohammédia.",
+          "Un temps fort dédié à l’entrepreneuriat, aux femmes et aux initiatives locales."
+        ]
+      },
+      "bazar-casa": {
+        tag: "Commercialisation",
+        title: "Organisation de la 5ᵉ édition du Bazar Solidaire de Casablanca",
+        image: "images/news-5.jpg",
+        meta: ["📅 26 juillet 2025", "📍 Casablanca"],
+        body: [
+          "Le CMS organise la 5ᵉ édition du Bazar Solidaire de Casablanca.",
+          "Un format événementiel pensé pour connecter les exposants, les visiteurs et les partenaires autour des produits des micro-entrepreneurs."
+        ]
+      },
+      "bazar-mdiq": {
+        tag: "Régions",
+        title: "Organisation de la 5ᵉ édition du Bazar Solidaire de Mdiq",
+        image: "images/news-6.jpg",
+        meta: ["📅 21 juillet 2025", "📍 M’diq", "🗓️ Du 11 au 31 juillet 2025"],
+        body: [
+          "Du 11 au 31 juillet 2025, la dynamique solidaire se déploie à l’échelle territoriale avec la 5ᵉ édition du Bazar Solidaire de M’diq."
+        ]
+      },
+      "prix-national": {
+        tag: "Prix national",
+        title: "Prix National du Micro-Entrepreneurs – 11ème édition",
+        image: "images/news-7.jpg",
+        meta: ["🏆 11ème édition"],
+        body: [
+          "Le Prix National du Micro-Entrepreneurs en est à sa 11ème édition.",
+          "Ce rendez-vous valorise les parcours, les produits et les initiatives des micro-entrepreneurs accompagnés par l’écosystème de la microfinance solidaire."
+        ]
+      },
+      "women-business": {
+        tag: "Partenariat",
+        title: "Participation du CMS au « Women in Business »",
+        image: "images/news-8.jpg",
+        meta: ["📅 16 octobre 2025"],
+        body: [
+          "Le 15 octobre 2025, le Centre Mohammed VI de Soutien à la Microfinance Solidaire (CMS) a participé à l’événement « Women in Business ».",
+          "Une rencontre consacrée à l’entrepreneuriat féminin et à l’autonomisation économique des femmes."
+        ]
+      },
+      "convention": {
+        tag: "Convention",
+        title: "Signature d’une Convention de Partenariat",
+        image: "images/news-4.jpg",
+        meta: ["📅 8 octobre 2025", "📍 Salé"],
+        body: [
+          "Une convention de partenariat a été signée à Salé entre le Secrétariat d’État chargé de l’Artisanat et de l’Économie Sociale et Solidaire (SECAESS) et le CMS.",
+          "Elle vise à renforcer l’accompagnement des micro-entrepreneurs."
+        ]
+      },
+      "senamif": {
+        tag: "International",
+        title: "Participation à la Semaine Nationale de la Microfinance (SeNaMif)",
+        image: "images/news-2.jpg",
+        meta: ["📅 26 septembre 2025", "📍 Bénin"],
+        body: [
+          "Le CMS a pris part à la première édition de la Semaine Nationale de la Microfinance (SeNaMif), organisée au Bénin.",
+          "Un rendez-vous dédié aux acteurs du secteur de la microfinance."
+        ]
+      },
+      "salon-artistes": {
+        tag: "Culture",
+        title: "Salon Solidaire des Artistes",
+        image: "images/news-3.jpg",
+        meta: ["📅 25 juin 2025", "📍 Rabat"],
+        body: [
+          "Le 23 juin, la Galerie d’art de la Fondation CDG (Espace Expression), à Rabat, a accueilli l’ouverture du Salon Solidaire des Artistes.",
+          "Une mise en lumière de la création et de l’expression artistique solidaire."
+        ]
+      },
+      "formation": {
+        tag: "Activité 01",
+        title: "Formation",
+        image: "images/formation.png",
+        meta: ["🎓 Renforcement des compétences"],
+        body: [
+          "Le CMS mène des actions de formation et d’accompagnement des agents des Associations de Micro-Crédit (AMC) et des micro-entrepreneurs bénéficiaires.",
+          "L’objectif est de renforcer les compétences techniques et managériales des acteurs du secteur."
+        ]
+      },
+      "appui": {
+        tag: "Activité 02",
+        title: "Appui à la micro-entreprise",
+        image: "images/appui.png",
+        meta: ["🤝 Accompagnement & commercialisation"],
+        body: [
+          "Ce programme soutient les porteurs de très petites entreprises par le renforcement des capacités : formations techniques et managériales, ainsi qu’un appui à la commercialisation.",
+          "Le Centre organise des rencontres régionales et participe à des salons pour aider les entrepreneurs à écouler leurs produits."
+        ]
+      },
+      "observatoire": {
+        tag: "Activité 03",
+        title: "Observatoire",
+        image: "images/observatoire.jpg",
+        meta: ["📊 Information, études et veille"],
+        body: [
+          "L’Observatoire est une plateforme d’information, d’études et de veille sur le secteur de la Microfinance au Maroc.",
+          "Il centralise les données, les analyses et le suivi de l’évolution du secteur."
+        ]
+      },
+      "cartographie": {
+        tag: "Outil de suivi",
+        title: "Cartographie nationale",
+        image: "images/observatoire.jpg",
+        meta: ["🗺️ Outil interactif"],
+        body: [
+          "Un système d’information géographique interactif permettant de localiser les implantations des Associations de Micro-Crédit et de la microfinance à l’échelle nationale."
+        ]
+      },
+      "education": {
+        tag: "Outil de suivi",
+        title: "Éducation financière",
+        image: "images/formation.png",
+        meta: ["💡 Grand public"],
+        body: [
+          "Des contenus et programmes d’éducation financière destinés au grand public, pour rendre les bonnes pratiques de gestion plus accessibles."
+        ]
+      },
+      "elearning": {
+        tag: "Outil de suivi",
+        title: "e-Learning",
+        image: "images/appui.png",
+        meta: ["▶ Formation à distance"],
+        body: [
+          "Une plateforme de formation à distance et des ressources d’accompagnement pour les acteurs du secteur de la microfinance."
+        ]
+      },
+      "bibliotheque": {
+        tag: "Outil de suivi",
+        title: "Bibliothèque",
+        image: "images/news-2.jpg",
+        meta: ["📚 Publications & archives"],
+        body: [
+          "Une bibliothèque réunissant publications, documents, rapports et archives du secteur, dans un accès direct et organisé."
+        ]
+      }
+    };
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.querySelector("#modalImage img");
+    const modalTag = document.getElementById("modalTag");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalMeta = document.getElementById("modalMeta");
+    const modalBody = document.getElementById("modalBody");
+    let lastFocused = null;
+
+    function openModal(key) {
+      const data = MODAL_DATA[key];
+      if (!data) return;
+      lastFocused = document.activeElement;
+      modalImg.src = data.image;
+      modalImg.alt = data.title;
+      modalTag.textContent = data.tag;
+      modalTitle.textContent = data.title;
+      modalMeta.innerHTML = (data.meta || [])
+        .map((m) => "<span>" + m + "</span>")
+        .join("");
+      modalBody.innerHTML = (data.body || [])
+        .map((p) => "<p>" + p + "</p>")
+        .join("");
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      document.getElementById("modalClose").focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastFocused) lastFocused.focus();
+    }
+
+    document.querySelectorAll("[data-modal]").forEach((el) => {
+      el.setAttribute("role", "button");
+      el.setAttribute("tabindex", "0");
+      el.addEventListener("click", () => openModal(el.dataset.modal));
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openModal(el.dataset.modal);
+        }
+      });
+    });
+
+    document.getElementById("modalClose").addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+    });
+
+    /* Bouton « Voir toutes les actualités » : affiche les actualités supplémentaires */
+    const newsToggle = document.getElementById("newsToggle");
+    const newsExtra = document.getElementById("newsExtra");
+    if (newsToggle && newsExtra) {
+      newsToggle.addEventListener("click", () => {
+        const open = newsExtra.classList.toggle("open");
+        newsToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        newsToggle.textContent = open ? "Réduire les actualités" : "Voir toutes les actualités";
+        if (open && window.gsap) {
+          gsap.from(newsExtra.querySelectorAll(".news-card"), {
+            opacity: 0,
+            y: 22,
+            duration: .6,
+            stagger: .08,
+            ease: "power3.out"
+          });
+        }
       });
     }
   </script>
